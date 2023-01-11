@@ -47,3 +47,10 @@ module "ecs_task_execution_role" {
   project_name                 = module.vpc.project_name
   
 }
+
+# Create ACM
+module "certmanager" {
+  source = "../modules/certmanager"
+  domain_name = var.domain_name
+  alternative_name = var.alternative_name
+}
