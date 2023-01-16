@@ -43,14 +43,14 @@ module "security_group" {
 
 # Create ECS tasks execution role
 module "ecs_task_execution_role" {
-  source = "../modules/ecs-tasks-execution-role"
-  project_name                 = module.vpc.project_name
-  
+  source       = "../modules/ecs-tasks-execution-role"
+  project_name = module.vpc.project_name
+
 }
 
 # Create ACM
 module "certmanager" {
-  source = "../modules/certmanager"
-  domain_name = var.domain_name
+  source           = "../modules/certmanager"
+  domain_name      = var.domain_name
   alternative_name = var.alternative_name
 }
